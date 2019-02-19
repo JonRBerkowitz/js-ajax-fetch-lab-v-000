@@ -1,13 +1,3 @@
-const token = 'cafbebc478a7cb200540870113b1b78d88bc512f'
-
-fetch ('https://api.github.com/user/repos', {
-  headers: {
-    Authorization: `token ${token}`
-  }
-})
-  .then(res => res.json())
-  .then(json => console.log(json));
-
 function getToken() {
   //change to your token to run in browser, but set
   //back to '' before committing so all tests pass
@@ -16,6 +6,14 @@ function getToken() {
 
 function forkRepo() {
   const repo = 'learn-co-curriculum/js-ajax-fetch-lab';
+  const url = `https://api.github.com/repos/${repo}/forks`;
+  fetch(repo, {
+    headers: {
+      Authorization: `token ${getToken()}`
+    }
+  })
+    .then(res => res.json())
+    .then(json => showResults(json))
   //use fetch to fork it!
 }
 
