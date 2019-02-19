@@ -11,7 +11,7 @@ fetch ('https://api.github.com/user/repos', {
 function getToken() {
   //change to your token to run in browser, but set
   //back to '' before committing so all tests pass
-  return '';
+  return 'cafbebc478a7cb200540870113b1b78d88bc512f';
 }
 
 function forkRepo() {
